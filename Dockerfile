@@ -1,6 +1,7 @@
 FROM ubuntu
 
 RUN set -ex; \
+    add-apt-repository ppa:alexlarsson/flatpak; \
     apt-get update; \
     apt-get install -y flatpak-builder; \
     rm -rf /var/lib/apt/lists/*
