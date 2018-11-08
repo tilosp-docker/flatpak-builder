@@ -5,7 +5,7 @@ RUN set -ex; \
     apt-get install -y software-properties-common; \
     add-apt-repository -y ppa:alexlarsson/flatpak; \
     apt-get update; \
-    apt-get install -y flatpak-builder; \
+    apt-get install -y flatpak-builder ca-certificates; \
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false software-properties-common; \
     rm -rf /var/lib/apt/lists/*
 
