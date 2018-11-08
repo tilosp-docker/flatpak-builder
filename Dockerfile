@@ -1,4 +1,4 @@
-FROM fedora
+FROM ubuntu
 
 RUN set -ex; \
     dnf -y update; \
