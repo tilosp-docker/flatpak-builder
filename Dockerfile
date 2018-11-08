@@ -1,13 +1,14 @@
 FROM ubuntu
 
 RUN set -ex; \
-    dnf -y update; \
-    dnf install -y flatpak-builder; \
-    dnf clean all
+    apt-get update; \
+    apt-get install -y flatpak-builder; \
+    rm -rf /var/lib/apt/lists/*
 
 RUN flatpak remote-add flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-RUN groupadd -g 1000 flatpak \
-    && useradd -u 1000 -g 1000 -m -s /bin/bash flatpak
+RUN set -ex; \
+    groupadd -g 1000 flatpak; \
+    useradd -u 1000 -g 1000 -m -s /bin/bash flatpak
 
 USER flatpak
