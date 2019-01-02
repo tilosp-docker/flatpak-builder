@@ -1,13 +1,16 @@
-FROM ubuntu
+FROM fedora
 
 RUN set -ex; \
-    apt-get update; \
-    apt-get install -y software-properties-common; \
-    add-apt-repository -y ppa:alexlarsson/flatpak; \
-    apt-get update; \
-    apt-get install -y flatpak-builder; \
-    apt-get purge -y --auto-remove software-properties-common; \
-    rm -rf /var/lib/apt/lists/*
+	dnf install -y \
+		flatpak-builder \
+        python3-requests \
+        python3-gobject \
+	; \
+	dnf clean all
+
+RUN set -ex; \
+    curl -o /usr/bin/repoclient https://raw.githubusercontent.com/alexlarsson/repo-manager/0.1.1/repoclient; \
+    chmod +x /usr/bin/repoclient
 
 RUN set -ex; \
     groupadd -g 1000 flatpak; \
