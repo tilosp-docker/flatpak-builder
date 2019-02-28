@@ -9,8 +9,8 @@ RUN set -ex; \
 	dnf clean all
 
 RUN set -ex; \
-    curl -o /usr/bin/repoclient https://raw.githubusercontent.com/alexlarsson/repo-manager/0.1.1/repoclient; \
-    chmod +x /usr/bin/repoclient
+    curl -o /usr/bin/flat-manager-client https://raw.githubusercontent.com/flatpak/flat-manager/0.2.2/flat-manager-client; \
+    chmod +x /usr/bin/flat-manager-client
 
 RUN set -ex; \
     groupadd -g 1000 flatpak; \
