@@ -19,6 +19,6 @@ RUN set -ex; \
 USER flatpak
 
 RUN set -ex; \
-    flatpak remote-add --user flathub https://flathub.org/repo/flathub.flatpakrepo \
-    flatpak remote-add --user flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo \
+    flatpak remote-add --user flathub https://flathub.org/repo/flathub.flatpakrepo; \
+    flatpak remote-add --user flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo; \
     flatpak remote-add --user fedora oci+https://registry.fedoraproject.org
