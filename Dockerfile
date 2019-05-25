@@ -9,7 +9,7 @@ RUN set -ex; \
 	dnf clean all
 
 RUN set -ex; \
-    curl -o /usr/bin/flat-manager-client https://raw.githubusercontent.com/flatpak/flat-manager/0.2.2/flat-manager-client; \
+    curl -o /usr/bin/flat-manager-client https://raw.githubusercontent.com/flatpak/flat-manager/0.3.3/flat-manager-client; \
     chmod +x /usr/bin/flat-manager-client
 
 RUN set -ex; \
