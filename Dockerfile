@@ -13,10 +13,10 @@ RUN set -ex; \
     chmod +x /usr/bin/flat-manager-client
 
 RUN set -ex; \
-    groupadd -g 1000 flatpak; \
-    useradd -u 1000 -g 1000 -m -s /bin/bash flatpak
+    groupadd -g 1000 flatpak-builder; \
+    useradd -u 1000 -g 1000 -m -s /bin/bash flatpak-builder
 
-USER flatpak
+USER flatpak-builder
 
 RUN set -ex; \
     flatpak remote-add --user flathub https://flathub.org/repo/flathub.flatpakrepo; \
